@@ -1,10 +1,14 @@
+import QueryClientProvider from "./providers/withQueryClient";
+import RouterProvider from "./providers/withRouter";
 
 function App() {
-
-  return (
-    <>
-    </>
-  )
+	return (
+		<>
+			<QueryClientProvider>
+				<RouterProvider />
+			</QueryClientProvider>
+		</>
+	);
 }
 
-export default App
+export default App;

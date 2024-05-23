@@ -1,0 +1,1 @@
+export { getBookDocument } from "./getBookDocument";
