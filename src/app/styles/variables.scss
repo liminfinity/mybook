@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap");
 
 $colors: (
+	primary: #fff,
 	primaryText: #26273b,
 	secondaryText: #707783,
 	star: #fbb500,
@@ -16,4 +17,8 @@ $fonts: (
 
 $padding: (
 	default: 1rem,
+);
+
+$zIndex: (
+	default: 1,
 );

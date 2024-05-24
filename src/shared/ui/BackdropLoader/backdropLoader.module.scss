@@ -1,0 +1,5 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.default {
+	color: map-get($colors, primary);
+}

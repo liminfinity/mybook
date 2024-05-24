@@ -1,0 +1,10 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default.default {
+	flex: 1;
+	@include flex(column) {
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: map-get($gaps, default) * 2;
+	}
+}

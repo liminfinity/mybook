@@ -1,16 +1,26 @@
 @import "../../../../app/styles/mixins", "../../../../app/styles/variables";
 
 .content {
+	height: 100%;
 	@include flex {
 		align-items: flex-start;
+		justify-content: space-between;
 	}
 }
 
 .mainContent {
+	height: inherit;
 	@include flex(column) {
 		gap: calc(map-get($gaps, default) / 2);
 		justify-content: space-between;
 		align-items: flex-start;
+	}
+}
+
+.textContent {
+	@include flex(column) {
+		align-items: flex-start;
+		gap: calc(map-get($gaps, default) / 2);
 	}
 }
 
@@ -22,4 +32,8 @@
 	@include flex(column) {
 		gap: calc(map-get($gaps, default) / 6);
 	}
+}
+
+.title {
+	text-overflow: ellipsis;
 }

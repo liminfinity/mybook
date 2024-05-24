@@ -3,10 +3,10 @@ import { FirestoreBookAPI } from "../api";
 
 const { getBooks } = new FirestoreBookAPI();
 
-function useBooksQuery() {
+function useBooksQuery(searchQuery = "") {
 	const query = useQuery({
-		queryKey: ["books"],
-		queryFn: getBooks,
+		queryKey: ["books", searchQuery],
+		queryFn: () => getBooks(searchQuery),
 		staleTime: 0,
 	});
 

@@ -1,16 +1,17 @@
 import { useDeleteBook } from "@entities/Book/hook";
 import { IBookControlsTooltipProps } from "./bookControlsTooltip.props";
-import { Tooltip, UpdateDeleteControls } from "@shared/ui";
+import { BackdropLoader, Tooltip, UpdateDeleteControls } from "@shared/ui";
 import { useModal } from "@shared/hook";
 import { useState } from "react";
 import { ClickAwayListener } from "@mui/material";
 import { MoreVert } from "@mui/icons-material";
+import styles from "./bookControlsTooltip.module.scss";
 
 export default function BookControlsTooltip({
 	bookId,
 	className = "",
 }: IBookControlsTooltipProps) {
-	const { mutate: deleteBook } = useDeleteBook();
+	const { mutate: deleteBook, isPending } = useDeleteBook();
 
 	const { open } = useModal();
 
@@ -21,7 +22,7 @@ export default function BookControlsTooltip({
 			<ClickAwayListener onClickAway={() => setIsTooltipOpen(false)}>
 				<div>
 					<Tooltip
-						className={className}
+						className={[styles.tooltip, className].join(" ")}
 						disableFocusListener
 						disableHoverListener
 						disableTouchListener
@@ -36,6 +37,7 @@ export default function BookControlsTooltip({
 					</Tooltip>
 				</div>
 			</ClickAwayListener>
+			<BackdropLoader open={isPending} />
 		</>
 	);
 }

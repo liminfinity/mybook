@@ -1,0 +1,3 @@
+const BOOKS_QUERY_DELAY = 500;
+
+export { BOOKS_QUERY_DELAY };

@@ -8,14 +8,31 @@
 	box-sizing: border-box;
 }
 
+ul,
+ol {
+	list-style: none;
+}
+
+html {
+	@include mobile {
+		font-size: 14px;
+	}
+}
+
 body {
 	min-height: 100vh;
 	line-height: 1.5;
 	font-family: nth(map-get($fonts, family), 1),
 		nth(map-get($fonts, family), 2);
+
 	color: map-get($colors, primaryText);
 }
 
 #root {
 	min-height: inherit;
+	@include flex(column);
+}
+
+[type="search"]::-webkit-search-cancel-button {
+	cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import { firestore } from "@app/index";
+import { firestore } from "@app/api/firebase";
 import { collection, CollectionReference } from "firebase/firestore";
 import { IBookWithId } from "../types/book";
 

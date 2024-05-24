@@ -1,6 +1,7 @@
 import { useBookById } from "@entities/Book/hook";
 import { IBookInfoTooltipProps } from "./bookInfoTooltip.props";
 import { Tooltip } from "@shared/ui";
+import styles from "./bookInfoTooltip.module.scss";
 
 export default function BookInfoTooltip({
 	bookId,
@@ -15,7 +16,7 @@ export default function BookInfoTooltip({
 	return (
 		<>
 			<Tooltip className={className}>
-				<ul>
+				<ul className={styles.content}>
 					{publicationYear && (
 						<li>Год публикации: {publicationYear}</li>
 					)}

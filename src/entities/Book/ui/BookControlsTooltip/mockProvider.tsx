@@ -4,7 +4,7 @@ import BookControlsTooltip from "./bookControlsTooltip";
 export default function mockProvider() {
 	return (
 		<QueryClientProvider>
-			<BookControlsTooltip bookId="kH8LCGmEKh9iAnzAcM9L" />
+			<BookControlsTooltip bookId="a49Eag7Utban270gmI25" />
 		</QueryClientProvider>
 	);
 }

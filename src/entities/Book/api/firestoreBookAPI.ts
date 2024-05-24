@@ -11,13 +11,20 @@ import { BookCollection } from "../model/collection";
 import { getBookDocument } from "../lib";
 
 class FirestoreBookAPI implements IBookAPI {
-	async getBooks() {
+	async getBooks(searchQuery = ""): Promise<IBookWithId[]> {
 		const booksQuery = query(BookCollection, orderBy("title", "asc"));
 		const booksSnapshot = await getDocs(booksQuery);
-		const books = booksSnapshot.docs.map(bookDoc => ({
-			...bookDoc.data(),
-			id: bookDoc.id,
-		}));
+		const searchQueryRegexp = new RegExp(
+			`.*${searchQuery.replace(/'/g, "")}.*`,
+			"i",
+		);
+
+		const books = booksSnapshot.docs
+			.map(bookDoc => ({
+				...bookDoc.data(),
+				id: bookDoc.id,
+			}))
+			.filter(book => searchQueryRegexp.test(book.title));
 		return books;
 	}
 

@@ -1,0 +1,11 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.content {
+	cursor: pointer;
+	@include flex {
+		gap: calc(map-get($gaps, default) / 2);
+	}
+}
+.input {
+	flex: 1;
+}

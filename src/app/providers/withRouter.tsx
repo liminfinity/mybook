@@ -2,6 +2,7 @@ import {
 	createBrowserRouter,
 	RouterProvider as ReactRouterProvider,
 } from "react-router-dom";
+import { Book } from "@pages/index";
 
 const router = createBrowserRouter([
 	{
@@ -10,10 +11,11 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/",
+		element: <Book.Layout />,
 		children: [
 			{
 				index: true,
-				element: <h2>Main</h2>,
+				element: <Book.BooksPage />,
 			},
 		],
 	},

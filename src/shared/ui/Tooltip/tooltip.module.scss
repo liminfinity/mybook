@@ -1,0 +1,6 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.tooltip.tooltip {
+	padding: calc(map-get($padding, default) / 2)
+		calc(map-get($padding, default) / 1.5);
+}

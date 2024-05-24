@@ -1,0 +1,8 @@
+@import "../../../../app/styles/mixins", "../../../../app/styles/variables";
+
+.content {
+	@include flex(column) {
+		align-items: flex-start;
+		gap: calc(map-get($gaps, default) / 3);
+	}
+}

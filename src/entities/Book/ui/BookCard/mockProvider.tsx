@@ -5,7 +5,7 @@ export default function mockProvider() {
 	return (
 		<QueryClientProvider>
 			<BookCard
-				id="kH8LCGmEKh9iAnzAcM9L"
+				id="a49Eag7Utban270gmI25"
 				title="Идеальный программист. Как стать профессионалом разработки ПО"
 				authors={["Роберт Мартин"]}
 				ISBN="978-5-459-01044-2"

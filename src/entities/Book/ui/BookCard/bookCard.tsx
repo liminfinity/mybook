@@ -18,10 +18,18 @@ export default function BookCard({
 		<Card className={className}>
 			<CardContent className={styles.content}>
 				<div className={styles.mainContent}>
-					<Typography variant="h6" component="h3">
-						{title}
-					</Typography>
-					<span className={styles.authors}>{authors.join(", ")}</span>
+					<div className={styles.textContent}>
+						<Typography
+							variant="h6"
+							component="h3"
+							className={styles.title}
+						>
+							{title}
+						</Typography>
+						<span className={styles.authors}>
+							{authors.join(", ")}
+						</span>
+					</div>
 					<StarRating rating={rating} />
 				</div>
 				<div className={styles.optional}>
