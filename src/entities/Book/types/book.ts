@@ -4,7 +4,7 @@ type Rating = IntRange<0, 10>;
 
 interface IBook {
 	title: string;
-	author: string[];
+	authors: string[];
 	publicationYear?: number;
 	rating: Rating;
 	ISBN?: string;

@@ -1,0 +1,7 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.btn.btn {
+	@include flex {
+		justify-content: space-between;
+	}
+}

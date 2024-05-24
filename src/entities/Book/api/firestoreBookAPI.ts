@@ -14,7 +14,10 @@ class FirestoreBookAPI implements IBookAPI {
 	async getBooks() {
 		const booksQuery = query(BookCollection, orderBy("title", "asc"));
 		const booksSnapshot = await getDocs(booksQuery);
-		const books = booksSnapshot.docs.map(bookDoc => bookDoc.data());
+		const books = booksSnapshot.docs.map(bookDoc => ({
+			...bookDoc.data(),
+			id: bookDoc.id,
+		}));
 		return books;
 	}
 

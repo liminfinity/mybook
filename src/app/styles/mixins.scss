@@ -1,0 +1,10 @@
+@import "variables";
+
+@mixin flex($dir: row) {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: $dir;
+	gap: map-get($gaps, default);
+	@content;
+}

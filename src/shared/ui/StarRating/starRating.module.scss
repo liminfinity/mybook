@@ -1,0 +1,15 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.default {
+	@include flex {
+		gap: calc(map-get($gaps, default) / 2);
+	}
+	color: map-get($colors, secondaryText);
+}
+
+.hasRating {
+	color: map-get($colors, primaryText);
+	& .star {
+		color: map-get($colors, star);
+	}
+}

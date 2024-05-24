@@ -1,0 +1,21 @@
+@import "variables", "mixins";
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+	font-family: nth(map-get($fonts, family), 1),
+		nth(map-get($fonts, family), 2);
+	color: map-get($colors, primaryText);
+}
+
+#root {
+	min-height: inherit;
+}

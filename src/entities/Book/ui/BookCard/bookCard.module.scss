@@ -1,0 +1,25 @@
+@import "../../../../app/styles/mixins", "../../../../app/styles/variables";
+
+.content {
+	@include flex {
+		align-items: flex-start;
+	}
+}
+
+.mainContent {
+	@include flex(column) {
+		gap: calc(map-get($gaps, default) / 2);
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+}
+
+.authors {
+	color: map-get($colors, secondaryText);
+}
+
+.optional {
+	@include flex(column) {
+		gap: calc(map-get($gaps, default) / 6);
+	}
+}
