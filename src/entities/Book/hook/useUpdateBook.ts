@@ -7,7 +7,7 @@ function useUpdateBook() {
 	const queryClient = useQueryClient();
 	const mutation = useMutation<void, Error, Parameters<typeof updateBook>>({
 		mutationFn: params => updateBook(...params),
-		onSuccess: () => {
+		onSettled: () => {
 			queryClient.invalidateQueries({
 				queryKey: ["books"],
 			});

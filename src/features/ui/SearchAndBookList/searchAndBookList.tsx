@@ -4,9 +4,9 @@ import { SearchQuery } from "@shared/context";
 import { SearchForm } from "@shared/ui";
 import { FormEvent, useState } from "react";
 import { useDebounce } from "use-debounce";
-import BookList from "../BookList";
-import { CircularProgress } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import styles from "./searchAndBookList.module.scss";
+import { BooksNotFound, BookList } from "@entities/Book/ui";
 
 export default function SearchAndBookList() {
 	const [searchQuery, setSearchQuery] = useState("");
@@ -33,11 +33,12 @@ export default function SearchAndBookList() {
 			>
 				<SearchForm onSubmit={getBooksByQuery} />
 			</SearchQuery.Context.Provider>
-			{isSuccess && <BookList books={data} />}
+			{isSuccess && !!data.length && <BookList books={data} />}
+			{isSuccess && !data.length && <BooksNotFound />}
 			{isLoading && (
-				<div className={styles.progressContainer}>
+				<Box className={styles.progressContainer}>
 					<CircularProgress />
-				</div>
+				</Box>
 			)}
 		</>
 	);

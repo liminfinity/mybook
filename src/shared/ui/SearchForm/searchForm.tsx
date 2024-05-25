@@ -17,12 +17,13 @@ export default function SearchForm({
 				<label className={styles.content}>
 					<Search color="primary" />
 					<TextField
-						className={styles.input}
 						type="search"
 						variant="standard"
 						placeholder={placeholder}
 						value={value}
 						onChange={handleChange}
+						fullWidth
+						autoComplete="off"
 					/>
 				</label>
 			</form>

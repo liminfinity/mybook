@@ -1,5 +1,6 @@
 @import "../../../app/styles/mixins", "../../../app/styles/variables";
 
-.default.default {
-	color: map-get($colors, primary);
+.progressContainer {
+	flex: 1;
+	@include flex;
 }

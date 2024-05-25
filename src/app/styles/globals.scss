@@ -13,6 +13,10 @@ ol {
 	list-style: none;
 }
 
+fieldset {
+	border: none;
+}
+
 html {
 	@include mobile {
 		font-size: 14px;

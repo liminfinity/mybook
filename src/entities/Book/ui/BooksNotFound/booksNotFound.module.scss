@@ -1,6 +1,5 @@
 @import "../../../../app/styles/mixins", "../../../../app/styles/variables";
 
-.progressContainer {
-	flex: 1;
+.default {
 	@include flex;
 }

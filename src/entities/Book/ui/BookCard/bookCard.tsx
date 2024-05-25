@@ -27,7 +27,7 @@ export default function BookCard({
 							{title}
 						</Typography>
 						<span className={styles.authors}>
-							{authors.join(", ")}
+							{authors.map(author => author.name).join(", ")}
 						</span>
 					</div>
 					<StarRating rating={rating} />

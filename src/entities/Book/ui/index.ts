@@ -1,15 +1,17 @@
 import BookCard from "./BookCard";
 import BookInfoTooltip from "./BookInfoTooltip";
 import BookControlsTooltip from "./BookControlsTooltip";
-import SearchAndBookList from "./SearchAndBookList";
 import AddBookButton from "./addBookButton";
 import AddBookFab from "./addBookFab";
+import BooksNotFound from "./BooksNotFound";
+import BookList from "./BookList";
 
 export {
 	BookCard,
 	BookInfoTooltip,
 	BookControlsTooltip,
-	SearchAndBookList,
 	AddBookButton,
 	AddBookFab,
+	BooksNotFound,
+	BookList,
 };

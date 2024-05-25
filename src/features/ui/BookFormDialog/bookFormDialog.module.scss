@@ -1,0 +1,58 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.form.form {
+	position: relative;
+}
+
+.content {
+	@include flex(column) {
+		align-items: flex-start;
+	}
+}
+
+.progressContainer {
+	@include flex;
+	background-color: map-get($colors, backdrop);
+	position: absolute;
+	inset: 0;
+}
+
+.ratingContainer {
+	width: 100%;
+	@include flex(column) {
+		align-items: flex-start;
+
+		gap: calc(map-get($gaps, default) / 2);
+	}
+}
+.rating.rating {
+	width: inherit;
+	justify-content: space-between;
+}
+
+.authorsContainer {
+	width: 100%;
+	@include flex(column) {
+		align-items: stretch;
+	}
+}
+
+.authors {
+	overflow: auto;
+	max-height: 20vh;
+}
+
+.author {
+	@include flex {
+		gap: 0;
+		justify-content: space-between;
+	}
+}
+
+.deleteAuthor {
+	padding: 0;
+}
+
+.addAuthor {
+	align-self: flex-start;
+}
