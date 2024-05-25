@@ -4,3 +4,9 @@
 	flex: 1;
 	@include flex;
 }
+
+.bookList {
+	@include mobile {
+		padding-bottom: map-get($padding, default) * 6;
+	}
+}

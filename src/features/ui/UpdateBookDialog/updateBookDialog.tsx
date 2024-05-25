@@ -10,7 +10,6 @@ export default function UpdateBookDialog({
 	...props
 }: IUpdateBookDialogProps) {
 	const { mutate: updateBook } = useUpdateBook();
-
 	const book = useBookById(bookId);
 
 	const handleSubmit: IBookFormDialogProps["onSubmit"] = updatedBook => {

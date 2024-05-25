@@ -7,7 +7,7 @@ export default function mockProvider() {
 			<BookCard
 				id="a49Eag7Utban270gmI25"
 				title="Идеальный программист. Как стать профессионалом разработки ПО"
-				authors={["Роберт Мартин"]}
+				authors={[{ name: "Роберт Мартин" }]}
 				ISBN="978-5-459-01044-2"
 				rating={5}
 				publicationYear={2011}

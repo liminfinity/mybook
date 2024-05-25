@@ -1,0 +1,18 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables",
+	"../../../app/styles/keyframes";
+
+.default.default {
+	position: fixed;
+	right: 3%;
+	bottom: 3%;
+
+	@include mobile {
+		bottom: 10%;
+	}
+
+	animation: show 0.3s;
+}
+
+.arrow {
+	font-size: 2rem;
+}

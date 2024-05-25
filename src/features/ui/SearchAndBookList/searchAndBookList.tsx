@@ -2,7 +2,7 @@ import { BOOKS_QUERY_DELAY } from "@entities/Book/consts";
 import { useBooksQuery } from "@entities/Book/hook";
 import { SearchQuery } from "@shared/context";
 import { SearchForm } from "@shared/ui";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { Box, CircularProgress } from "@mui/material";
 import styles from "./searchAndBookList.module.scss";
@@ -16,11 +16,17 @@ export default function SearchAndBookList() {
 		BOOKS_QUERY_DELAY,
 	);
 
-	const { data, isSuccess, isLoading } = useBooksQuery(debouncedQuery);
+	const { data, isSuccess, isLoading, refetch } =
+		useBooksQuery(debouncedQuery);
+
+	useEffect(() => {
+		if (debouncedQuery === searchQuery) refetch();
+	}, [debouncedQuery, searchQuery, refetch]);
 
 	const getBooksByQuery = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setDebouncedQuery(searchQuery);
+		refetch();
 	};
 
 	return (
@@ -33,7 +39,9 @@ export default function SearchAndBookList() {
 			>
 				<SearchForm onSubmit={getBooksByQuery} />
 			</SearchQuery.Context.Provider>
-			{isSuccess && !!data.length && <BookList books={data} />}
+			{isSuccess && !!data.length && (
+				<BookList books={data} className={styles.bookList} />
+			)}
 			{isSuccess && !data.length && <BooksNotFound />}
 			{isLoading && (
 				<Box className={styles.progressContainer}>

@@ -5,7 +5,7 @@ const { getBooks } = new FirestoreBookAPI();
 
 function useBooksQuery(searchQuery = "") {
 	const query = useQuery({
-		queryKey: ["books", searchQuery],
+		queryKey: ["books"],
 		queryFn: () => getBooks(searchQuery),
 		staleTime: 0,
 	});

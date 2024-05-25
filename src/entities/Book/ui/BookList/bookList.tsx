@@ -3,9 +3,9 @@ import { BookCard } from "@entities/Book/ui";
 import styles from "./bookList.module.scss";
 import { IBookListProps } from "./bookList.props";
 
-export default function BookList({ books }: IBookListProps) {
+export default function BookList({ books, className = "" }: IBookListProps) {
 	return (
-		<Grid container spacing={2} columns={12}>
+		<Grid className={className} container spacing={2} columns={12}>
 			{books.map(book => {
 				return (
 					<Grid

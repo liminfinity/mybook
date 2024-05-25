@@ -7,7 +7,7 @@ function useDeleteBook() {
 	const queryClient = useQueryClient();
 	const mutation = useMutation({
 		mutationFn: deleteBook,
-		onSuccess: () => {
+		onSettled: () => {
 			queryClient.invalidateQueries({
 				queryKey: ["books"],
 			});

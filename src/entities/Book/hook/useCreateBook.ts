@@ -7,7 +7,7 @@ function useCreateBook() {
 	const queryClient = useQueryClient();
 	const mutation = useMutation({
 		mutationFn: createBook,
-		onSuccess: () => {
+		onSettled: () => {
 			queryClient.invalidateQueries({
 				queryKey: ["books"],
 			});

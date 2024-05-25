@@ -10,6 +10,7 @@
 
 .mainContent {
 	height: inherit;
+	max-width: 90%;
 	@include flex(column) {
 		gap: calc(map-get($gaps, default) / 2);
 		justify-content: space-between;
@@ -18,6 +19,7 @@
 }
 
 .textContent {
+	width: 100%;
 	@include flex(column) {
 		align-items: flex-start;
 		gap: calc(map-get($gaps, default) / 2);
@@ -35,5 +37,10 @@
 }
 
 .title {
-	text-overflow: ellipsis;
+	word-wrap: break-word;
+	width: inherit;
+}
+
+.controls {
+	flex: 1;
 }
