@@ -10,6 +10,5 @@ const FirebaseConfig: FirebaseOptions = {
 	measurementId: import.meta.env.VITE_FB_MEASUREMENT_ID,
 };
 
-console.log(FirebaseConfig);
 
 export { FirebaseConfig };
