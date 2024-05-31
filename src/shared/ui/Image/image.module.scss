@@ -1,0 +1,12 @@
+@import "../../../app/styles/variables", "../../../app/styles/mixins";
+
+.default {
+	object-fit: cover;
+	object-position: center;
+	max-width: 100%;
+}
+@supports (image-rendering: crisp-edges) {
+	.default {
+		image-rendering: crisp-edges;
+	}
+}

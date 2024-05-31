@@ -5,7 +5,6 @@ import { BookFormDialog } from "@features/ui";
 import { IBookFormDialogProps } from "@features/ui/BookFormDialog/bookFormDialog.props";
 import { getCleanBook } from "@features/lib";
 
-
 export default function UpdateBookDialog({
 	bookId,
 	onClose,
@@ -16,9 +15,9 @@ export default function UpdateBookDialog({
 	const handleSubmit: IBookFormDialogProps["onSubmit"] = updatedBook => {
 		const cleanBook = getCleanBook(updatedBook);
 		updateBook([bookId, cleanBook]);
-		onClose && onClose()
+		onClose && onClose();
 	};
-	
+
 	return (
 		<>
 			{book && (

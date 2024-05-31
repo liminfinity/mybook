@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BookInfoTooltip from "./bookInfoTooltip";
+import SearchAndBookList from "./searchAndBookList";
 import { QueryClientProvider } from "@app/providers";
 
 const meta = {
-	component: BookInfoTooltip,
+	component: SearchAndBookList,
 	decorators: [
 		Story => (
 			<QueryClientProvider>
@@ -11,19 +11,18 @@ const meta = {
 			</QueryClientProvider>
 		),
 	],
-	title: "Entities/BookInfoTooltip",
+
+	title: "Widgets/SearchAndBookList",
 	tags: ["autodocs"],
 	parameters: {
 		layout: "centered",
 	},
-} satisfies Meta<typeof BookInfoTooltip>;
+} satisfies Meta<typeof SearchAndBookList>;
 
-type Story = StoryObj<typeof BookInfoTooltip>;
+type Story = StoryObj<typeof SearchAndBookList>;
 
-export const BookInfoTooltipSimple: Story = {
-	args: {
-		bookId: "a49Eag7Utban270gmI25",
-	},
+export const SearchAndBookListSimple: Story = {
+	args: {},
 };
 
 export default meta;

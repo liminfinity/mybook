@@ -1,8 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import UpdateBookDialog from "./mockProvider";
+import UpdateBookDialog from "./updateBookDialog";
+import { QueryClientProvider } from "@app/providers";
 
 const meta = {
 	component: UpdateBookDialog,
+	decorators: [
+		Story => (
+			<QueryClientProvider>
+				<Story />
+			</QueryClientProvider>
+		),
+	],
+
 	title: "Features/UpdateBookDialog",
 	tags: ["autodocs"],
 	parameters: {
@@ -13,7 +22,10 @@ const meta = {
 type Story = StoryObj<typeof UpdateBookDialog>;
 
 export const UpdateBookDialogSimple: Story = {
-	args: {},
+	args: {
+		open: true,
+		bookId: "a49Eag7Utban270gmI25",
+	},
 };
 
 export default meta;

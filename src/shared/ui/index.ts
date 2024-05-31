@@ -4,6 +4,7 @@ import UpdateDeleteControls from "./UpdateDeleteControls";
 import SearchForm from "./SearchForm";
 import BackdropLoader from "./BackdropLoader";
 import ScrollToTopFab from "./ScrollToTopFab";
+import Image from "./Image";
 
 export {
 	StarRating,
@@ -12,4 +13,5 @@ export {
 	SearchForm,
 	BackdropLoader,
 	ScrollToTopFab,
+	Image,
 };

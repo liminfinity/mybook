@@ -1,8 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import MobileBookHeader from "./mockProvider";
+import MobileBookHeader from "./mobileBookHeader";
+import { QueryClientProvider } from "@app/providers";
 
 const meta = {
 	component: MobileBookHeader,
+	decorators: [
+		Story => (
+			<QueryClientProvider>
+				<Story />
+			</QueryClientProvider>
+		),
+	],
+
 	title: "Widgets/MobileBookHeader",
 	tags: ["autodocs"],
 	parameters: {

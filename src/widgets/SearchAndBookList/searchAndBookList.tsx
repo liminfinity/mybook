@@ -30,7 +30,7 @@ export default function SearchAndBookList() {
 	};
 
 	return (
-		<>
+		<section className={styles.default}>
 			<SearchQuery.Context.Provider
 				value={{
 					value: searchQuery,
@@ -48,6 +48,6 @@ export default function SearchAndBookList() {
 					<CircularProgress />
 				</Box>
 			)}
-		</>
+		</section>
 	);
 }

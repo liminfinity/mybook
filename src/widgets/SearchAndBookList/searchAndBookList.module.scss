@@ -1,0 +1,21 @@
+@import "../../app/styles/mixins", "../../app/styles/variables";
+
+.default {
+	@include flex(column) {
+		align-items: stretch;
+		justify-content: flex-start;
+		gap: map-get($gaps, default) * 2;
+	}
+}
+
+.progressContainer {
+	flex: 1;
+	@include flex;
+}
+
+.bookList {
+	padding-bottom: map-get($padding, default) * 2;
+	@include mobile {
+		padding-bottom: map-get($padding, default) * 6;
+	}
+}

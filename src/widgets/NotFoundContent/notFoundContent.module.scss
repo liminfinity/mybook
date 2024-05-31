@@ -1,0 +1,32 @@
+@import "../../app/styles/mixins", "../../app/styles/variables";
+
+.default {
+	@include flex {
+		gap: map-get($gaps, default) * 2;
+	}
+	@include mobile {
+		flex-direction: column-reverse;
+	}
+}
+
+.oops.oops {
+	font-weight: 600;
+	color: map-get($colors, secondary);
+}
+
+.description {
+	@include flex(column) {
+		gap: calc(map-get($gaps, default) / 2);
+	}
+}
+
+.content {
+	@include flex(column) {
+		gap: map-get($gaps, default) * 2;
+	}
+	text-align: center;
+}
+
+.link {
+	align-self: stretch;
+}

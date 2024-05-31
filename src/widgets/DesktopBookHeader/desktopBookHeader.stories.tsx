@@ -1,8 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import DesktopBookHeader from "./mockProvider";
+import DesktopBookHeader from "./desktopBookHeader";
+import { QueryClientProvider } from "@app/providers";
 
 const meta = {
 	component: DesktopBookHeader,
+	decorators: [
+		Story => (
+			<QueryClientProvider>
+				<Story />
+			</QueryClientProvider>
+		),
+	],
 	title: "Widgets/DesktopBookHeader",
 	tags: ["autodocs"],
 	parameters: {

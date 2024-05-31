@@ -1,8 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import AddBookFab from "./mockProvider";
+import AddBookFab from "./addBookFab";
+import { QueryClientProvider } from "@app/providers";
 
 const meta = {
 	component: AddBookFab,
+	decorators: [
+		Story => (
+			<QueryClientProvider>
+				<Story />
+			</QueryClientProvider>
+		),
+	],
 	title: "Entities/AddBookFab",
 	tags: ["autodocs"],
 	parameters: {

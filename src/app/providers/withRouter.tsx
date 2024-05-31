@@ -2,12 +2,12 @@ import {
 	createBrowserRouter,
 	RouterProvider as ReactRouterProvider,
 } from "react-router-dom";
-import { Book } from "@pages/index";
+import { Book, NotFound } from "@pages/index";
 
 const router = createBrowserRouter([
 	{
 		path: "*",
-		element: <h1>Not found</h1>,
+		element: <NotFound.NotFoundPage />,
 	},
 	{
 		path: "/",
