@@ -1,8 +1,13 @@
 import { IBookStore } from "@entities/Book/types";
 
-const groupByState = (store: IBookStore) => ({
+const groupBySlice = (store: IBookStore) => ({
 	groupBy: store.groupBy,
 	setGroupBy: store.setGroupBy,
 });
 
-export { groupByState };
+const searchQuerySlice = (store: IBookStore) => ({
+	searchQuery: store.searchQuery,
+	setSearchQuery: store.setSearchQuery,
+});
+
+export { groupBySlice, searchQuerySlice };

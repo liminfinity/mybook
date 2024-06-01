@@ -7,6 +7,7 @@ import BooksNotFound from "./BooksNotFound";
 import BookList from "./BookList";
 import BookGroupingPanel from "./BookGroupingPanel";
 import GroupedBookList from "./GroupedBookList";
+import BestBookCard from "./BestBookCard";
 
 export {
 	BookCard,
@@ -18,4 +19,5 @@ export {
 	BookList,
 	BookGroupingPanel,
 	GroupedBookList,
+	BestBookCard,
 };

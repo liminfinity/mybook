@@ -5,6 +5,7 @@ import SearchForm from "./SearchForm";
 import BackdropLoader from "./BackdropLoader";
 import ScrollToTopFab from "./ScrollToTopFab";
 import Image from "./Image";
+import Caption from "./Caption";
 
 export {
 	StarRating,
@@ -14,4 +15,5 @@ export {
 	BackdropLoader,
 	ScrollToTopFab,
 	Image,
+	Caption,
 };

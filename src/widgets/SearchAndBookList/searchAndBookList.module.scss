@@ -16,10 +16,3 @@
 .groupingPanel {
 	align-self: stretch;
 }
-
-.bookList {
-	padding-bottom: map-get($padding, default) * 2;
-	@include mobile {
-		padding-bottom: map-get($padding, default) * 6;
-	}
-}

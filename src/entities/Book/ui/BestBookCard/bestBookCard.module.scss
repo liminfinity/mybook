@@ -1,11 +1,12 @@
 @import "../../../../app/styles/mixins", "../../../../app/styles/variables";
 
-.group {
+.progressContainer {
+	flex: 1;
+	@include flex;
+}
+
+.bestBookContainer {
 	@include flex(column) {
 		align-items: stretch;
 	}
-}
-
-.groupItems {
-	padding: calc(map-get($padding, default) / 2) map-get($padding, default);
 }

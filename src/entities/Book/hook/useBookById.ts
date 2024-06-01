@@ -1,8 +1,8 @@
+import { useBookStore } from "../model";
 import { useBooksQuery } from "./useBooksQuery";
-import { SearchQuery } from "@shared/context";
 
 function useBookById(bookId: string) {
-	const { value: searchQuery } = SearchQuery.useContext();
+	const searchQuery = useBookStore(state => state.searchQuery);
 
 	const { data, isSuccess } = useBooksQuery(searchQuery);
 

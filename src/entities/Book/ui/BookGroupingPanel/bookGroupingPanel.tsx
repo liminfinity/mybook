@@ -14,7 +14,7 @@ import styles from "./bookGroupingPanel.module.scss";
 export default function BookGroupingPanel({
 	className = "",
 }: IBookGroupingPanelProps) {
-	const { groupBy, setGroupBy } = useBookStore(selectors.groupByState);
+	const { groupBy, setGroupBy } = useBookStore(selectors.groupBySlice);
 
 	return (
 		<FormControl className={[styles.default, className].join(" ")}>

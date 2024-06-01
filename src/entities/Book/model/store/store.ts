@@ -4,7 +4,9 @@ import { persist } from "zustand/middleware";
 
 const BookStore: StateCreator<IBookStore> = set => ({
 	groupBy: undefined,
+	searchQuery: "",
 	setGroupBy: groupBy => set({ groupBy }),
+	setSearchQuery: searchQuery => set({ searchQuery }),
 });
 
 const PersistedBookStore = persist(BookStore, {

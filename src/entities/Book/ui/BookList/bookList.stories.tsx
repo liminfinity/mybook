@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BookList from "./mockProvider";
+import BookList from "./bookList";
 import { QueryClientProvider } from "@app/providers";
 
 const meta = {
