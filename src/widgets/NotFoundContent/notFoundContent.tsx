@@ -6,7 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 export default function NotFoundContent() {
 	return (
 		<section className={styles.default}>
-			<Image src="/404Girl.png" width={150} alt=""/>
+			<Image src="/404Girl.png" width={150} alt="" />
 			<div className={styles.content}>
 				<div className={styles.description}>
 					<Typography

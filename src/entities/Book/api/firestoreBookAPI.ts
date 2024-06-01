@@ -7,7 +7,7 @@ import {
 	updateDoc,
 } from "firebase/firestore";
 import { IBook, IBookAPI, IBookWithId } from "../types";
-import { BookCollection } from "../model/collection";
+import { BookCollection } from "../model";
 import { getBookDocument } from "../lib";
 
 class FirestoreBookAPI implements IBookAPI {

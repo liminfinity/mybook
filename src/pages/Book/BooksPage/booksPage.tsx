@@ -11,13 +11,15 @@ export default function BooksPage() {
 				<SearchAndBookList />
 			</Container>
 			<ScrollToTopFab />
-			<Helmet 
+			<Helmet
 				title="Главная – MyBook"
 				meta={[
-					{name: "description", content: "Страница для управления книгами"}
-				]} 
+					{
+						name: "description",
+						content: "Страница для управления книгами",
+					},
+				]}
 			/>
 		</>
 	);
 }
-

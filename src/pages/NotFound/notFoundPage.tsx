@@ -9,11 +9,9 @@ export default function NotFoundPage() {
 			<Container className={styles.default} component={"main"}>
 				<NotFoundContent />
 			</Container>
-			<Helmet 
-				title="Страница не найдена – MyBook" 
-				meta={[
-					{name: "description", content: "Страница ошибки"}
-				]} 
+			<Helmet
+				title="Страница не найдена – MyBook"
+				meta={[{ name: "description", content: "Страница ошибки" }]}
 			/>
 		</>
 	);

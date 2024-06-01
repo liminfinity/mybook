@@ -2,6 +2,7 @@
 
 .default.default {
 	flex: 1;
+	@include container;
 	@include flex(column) {
 		align-items: stretch;
 		justify-content: flex-start;

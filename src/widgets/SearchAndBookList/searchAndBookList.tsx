@@ -1,14 +1,24 @@
 import { BOOKS_QUERY_DELAY } from "@entities/Book/consts";
-import { useBooksQuery } from "@entities/Book/hook";
+import { useBooksQuery, useGroupedBooks } from "@entities/Book/hook";
 import { SearchQuery } from "@shared/context";
 import { SearchForm } from "@shared/ui";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { useDebounce } from "use-debounce";
 import { Box, CircularProgress } from "@mui/material";
 import styles from "./searchAndBookList.module.scss";
-import { BooksNotFound, BookList } from "@entities/Book/ui";
+import {
+	BooksNotFound,
+	BookList,
+	GroupedBookList,
+	BookGroupingPanel,
+} from "@entities/Book/ui";
+import { useBookStore } from "@entities/Book/model";
+import { GroupedBookArray, SortingOrder } from "@entities/Book/types";
+import { ISearchAndBookList } from "./searchAndBookList.props";
 
-export default function SearchAndBookList() {
+export default function SearchAndBookList({
+	className = "",
+}: ISearchAndBookList) {
 	const [searchQuery, setSearchQuery] = useState("");
 
 	const [debouncedQuery, setDebouncedQuery] = useDebounce(
@@ -16,21 +26,19 @@ export default function SearchAndBookList() {
 		BOOKS_QUERY_DELAY,
 	);
 
-	const { data, isSuccess, isLoading, refetch } =
-		useBooksQuery(debouncedQuery);
+	const groupBy = useBookStore(store => store.groupBy);
 
-	useEffect(() => {
-		if (debouncedQuery === searchQuery) refetch();
-	}, [debouncedQuery, searchQuery, refetch]);
+	const { data, isSuccess, isLoading } = useBooksQuery(debouncedQuery);
+
+	const groupedBooks = useGroupedBooks(data, groupBy, SortingOrder.DESC);
 
 	const getBooksByQuery = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setDebouncedQuery(searchQuery);
-		refetch();
 	};
 
 	return (
-		<section className={styles.default}>
+		<section className={[styles.default, className].join(" ")}>
 			<SearchQuery.Context.Provider
 				value={{
 					value: searchQuery,
@@ -38,10 +46,19 @@ export default function SearchAndBookList() {
 				}}
 			>
 				<SearchForm onSubmit={getBooksByQuery} />
+				{isSuccess && !!data.length && (
+					<BookGroupingPanel className={styles.groupingPanel} />
+				)}
+				{isSuccess && !!data.length && !groupBy && (
+					<BookList books={data} className={styles.bookList} />
+				)}
+				{isSuccess && !!data.length && groupBy && (
+					<GroupedBookList
+						groupedBooks={groupedBooks as GroupedBookArray}
+						className={styles.bookList}
+					/>
+				)}
 			</SearchQuery.Context.Provider>
-			{isSuccess && !!data.length && (
-				<BookList books={data} className={styles.bookList} />
-			)}
 			{isSuccess && !data.length && <BooksNotFound />}
 			{isLoading && (
 				<Box className={styles.progressContainer}>

@@ -1,0 +1,5 @@
+@import "../../app/styles/mixins", "../../app/styles/variables";
+
+.container.container {
+	@include container;
+}

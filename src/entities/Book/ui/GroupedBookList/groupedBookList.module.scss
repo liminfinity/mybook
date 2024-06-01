@@ -1,0 +1,19 @@
+@import "../../../../app/styles/mixins", "../../../../app/styles/variables";
+
+.group {
+	@include flex(column) {
+		align-items: stretch;
+	}
+}
+
+.groupTitle {
+	padding: calc(map-get($padding, default) / 2) map-get($padding, default);
+	border-radius: calc(map-get($radius, default) / 4);
+	box-shadow: map-get($shadow, caption);
+	background: map-get($colors, secondary);
+	color: map-get($colors, primary);
+}
+
+.groupItems {
+	padding: calc(map-get($padding, default) / 2) map-get($padding, default);
+}
