@@ -1,3 +1,5 @@
 const BOOKS_QUERY_DELAY = 500;
 
-export { BOOKS_QUERY_DELAY };
+const UNGROUPED_BOOKS_TITLE = "Остальное";
+
+export { BOOKS_QUERY_DELAY, UNGROUPED_BOOKS_TITLE };

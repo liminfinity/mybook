@@ -1,0 +1,9 @@
+@import "../../../app/styles/mixins", "../../../app/styles/variables";
+
+.default {
+	padding: calc(map-get($padding, default) / 2) map-get($padding, default);
+	border-radius: calc(map-get($radius, default) / 4);
+	box-shadow: map-get($shadow, caption);
+	background: map-get($colors, secondary);
+	color: map-get($colors, primary);
+}

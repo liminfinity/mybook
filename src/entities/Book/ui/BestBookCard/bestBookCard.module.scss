@@ -1,0 +1,12 @@
+@import "../../../../app/styles/mixins", "../../../../app/styles/variables";
+
+.progressContainer {
+	flex: 1;
+	@include flex;
+}
+
+.bestBookContainer {
+	@include flex(column) {
+		align-items: stretch;
+	}
+}

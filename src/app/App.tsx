@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@mui/material";
-import QueryClientProvider from "./providers/withQueryClient";
-import RouterProvider from "./providers/withRouter";
+import { QueryClientProvider, RouterProvider } from "./providers";
 import { MUIThemeConfig } from "./config";
 import "./styles/globals.scss";
 

@@ -1,0 +1,16 @@
+@import "../../../../app/styles/mixins", "../../../../app/styles/variables";
+
+.default {
+	@include flex(column) {
+		align-items: flex-start;
+		gap: calc(map-get($gaps, default) / 2);
+	}
+}
+
+.formControl {
+	@include flex {
+		justify-content: flex-start;
+		gap: calc(map-get($gaps, default) / 2);
+		flex-wrap: wrap;
+	}
+}

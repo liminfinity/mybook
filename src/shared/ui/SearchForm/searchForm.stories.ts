@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SearchForm from "./mockProvider";
+import SearchForm from "./searchForm";
 
 const meta = {
 	component: SearchForm,

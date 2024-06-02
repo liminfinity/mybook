@@ -18,6 +18,8 @@ fieldset {
 }
 
 html {
+	scrollbar-gutter: stable;
+
 	@include mobile {
 		font-size: 14px;
 	}
@@ -26,14 +28,18 @@ html {
 body {
 	min-height: 100vh;
 	line-height: 1.5;
-	font-family: nth(map-get($fonts, family), 1),
-		nth(map-get($fonts, family), 2);
+
+	//* MUI добавлять справа padding, если установлен scrollbar-gutter у html
+	padding-right: 0 !important;
+
+	font-family: map-get($fonts, family);
 
 	color: map-get($colors, primaryText);
 }
 
 #root {
 	min-height: inherit;
+
 	@include flex(column);
 }
 

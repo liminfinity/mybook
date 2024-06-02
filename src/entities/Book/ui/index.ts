@@ -5,6 +5,9 @@ import AddBookButton from "./addBookButton";
 import AddBookFab from "./addBookFab";
 import BooksNotFound from "./BooksNotFound";
 import BookList from "./BookList";
+import BookGroupingPanel from "./BookGroupingPanel";
+import GroupedBookList from "./GroupedBookList";
+import BestBookCard from "./BestBookCard";
 
 export {
 	BookCard,
@@ -14,4 +17,7 @@ export {
 	AddBookFab,
 	BooksNotFound,
 	BookList,
+	BookGroupingPanel,
+	GroupedBookList,
+	BestBookCard,
 };

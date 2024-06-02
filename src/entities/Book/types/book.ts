@@ -18,4 +18,12 @@ interface IBookWithId extends IBook {
 	id: string;
 }
 
+interface IBook {
+	title: string;
+	authors: IAuthor[];
+	publicationYear?: number;
+	rating?: Rating;
+	ISBN?: string;
+}
+
 export type { IBook, IBookWithId };

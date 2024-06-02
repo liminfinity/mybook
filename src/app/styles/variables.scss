@@ -2,6 +2,7 @@
 
 $colors: (
 	primary: #fff,
+	secondary: #1976d2,
 	primaryText: #26273b,
 	secondaryText: #707783,
 	star: #fbb500,
@@ -13,13 +14,28 @@ $gaps: (
 );
 
 $fonts: (
-	family: "Noto Sans" sans-serif,
+	family: (
+		"Noto Sans",
+		sans-serif,
+	),
 );
 
 $padding: (
 	default: 1rem,
 );
 
+$radius: (
+	default: 1rem,
+);
+
 $zIndex: (
 	default: 1,
+);
+
+$shadow: (
+	caption: (
+		0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+		0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 10px 0px rgba(0, 0, 0, 0),
+	),
 );
