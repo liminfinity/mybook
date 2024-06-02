@@ -6,6 +6,8 @@ import BackdropLoader from "./BackdropLoader";
 import ScrollToTopFab from "./ScrollToTopFab";
 import Image from "./Image";
 import Caption from "./Caption";
+import SnackbarNotice from "./SnackbarNotice";
+import SnackbarNoticeList from "./SnackbarNoticeList";
 
 export {
 	StarRating,
@@ -16,4 +18,6 @@ export {
 	ScrollToTopFab,
 	Image,
 	Caption,
+	SnackbarNotice,
+	SnackbarNoticeList,
 };

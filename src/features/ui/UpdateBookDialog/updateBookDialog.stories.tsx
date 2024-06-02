@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import UpdateBookDialog from "./mockProvider";
+import UpdateBookDialog from "./updateBookDialog";
 import { QueryClientProvider } from "@app/providers";
 
 const meta = {

@@ -12,6 +12,7 @@ export default function BooksPage() {
 				<BestBookCard />
 				<SearchAndBookList />
 			</Container>
+
 			<ScrollToTopFab />
 			<Helmet
 				title="Главная – MyBook"

@@ -10,4 +10,11 @@ const searchQuerySlice = (store: IBookStore) => ({
 	setSearchQuery: store.setSearchQuery,
 });
 
-export { groupBySlice, searchQuerySlice };
+const noticeSlice = (store: IBookStore) => ({
+	notices: store.notices,
+	addNotice: store.addNotice,
+	deleteNotice: store.deleteNotice,
+	toggleNotice: store.toggleNotice,
+});
+
+export { groupBySlice, searchQuerySlice, noticeSlice };
